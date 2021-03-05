@@ -1,0 +1,11 @@
+os:
+  - linux
+  - osx
+install:
+  - git submodule init
+script:
+  - cd tests
+  - ./get_my_region_test.sh
+  - ./get_my_token_test.sh
+  - ./get_signature_test.sh
+  - ./connect_test.sh
