@@ -11,12 +11,10 @@ addons:
   homebrew:
     update: true
     packages:
-      - openvpn
       - jq
 
 before_install:
-  - git submodule init
-  - perl --version
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew install --build-from-source openvpn; fi
 script:
   - cd tests
   - ./get_my_region_test.sh
