@@ -6,9 +6,11 @@ addons:
   apt:
     packages:
       - openvpn
+      # - perl
 
 before_install:
   - git submodule init
+  - perl --version
 script:
   - cd tests
   - ./get_my_region_test.sh
