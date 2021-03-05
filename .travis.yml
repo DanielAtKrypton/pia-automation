@@ -24,7 +24,7 @@ addons:
 
 before_install:
   - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew install openvpn; fi
-  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then apt-get install openvpn; fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get install openvpn; fi
 script:
   - cd tests
   - ./get_my_region_test.sh
