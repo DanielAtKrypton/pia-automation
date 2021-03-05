@@ -6,7 +6,7 @@ addons:
   apt:
     packages:
       - openvpn
-      # - perl
+      - jq
 
 before_install:
   - git submodule init
