@@ -11,6 +11,7 @@ addons:
 before_install:
   - git submodule init
   - perl --version
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew install jq; fi
 script:
   - cd tests
   - ./get_my_region_test.sh
