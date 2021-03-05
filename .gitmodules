@@ -1,3 +1,6 @@
 [submodule "libraries/manual-connections"]
 	path = libraries/manual-connections
 	url = https://github.com/DanielAtKrypton/manual-connections
+[submodule "libraries/shunit2"]
+	path = libraries/shunit2
+	url = git@github.com:kward/shunit2.git
