@@ -1,7 +1,12 @@
 os:
   - linux
   - osx
-install:
+addons:
+  apt:
+    packages:
+      - openvpn
+
+before_install:
   - git submodule init
 script:
   - cd tests
