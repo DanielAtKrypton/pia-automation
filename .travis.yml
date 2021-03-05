@@ -23,7 +23,7 @@ addons:
       - jq
 
 before_install:
-  # - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew install --build-from-source openvpn; fi
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew install openvpn; fi
 script:
   - cd tests
   - ./get_my_region_test.sh
