@@ -4,22 +4,26 @@ env:
 # - AUTOCONNECT=true DISABLE_IPV6="no" PIA_DNS=false PIA_PF=true VPN_PROTOCOL=openvpn_udp_strong
 - AUTOCONNECT=true DISABLE_IPV6="no" PIA_DNS=false PIA_PF=true VPN_PROTOCOL=openvpn_tcp_standard
 # - AUTOCONNECT=true DISABLE_IPV6="no" PIA_DNS=false PIA_PF=true VPN_PROTOCOL=openvpn_tcp_strong
-os:
-  - linux
-  - osx
+jobs:
+  include:
+    - os: linux
+      dist: xenial
+    - os: osx
+      osx_image: xcode10.1
 addons:
   apt:
-    # update: true
+    update: true
     packages:
       - openvpn
       - jq
   homebrew:
-    # update: true
+    update: true
     packages:
+      - openvpn
       - jq
 
 before_install:
-  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew install --build-from-source openvpn; fi
+  # - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew install --build-from-source openvpn; fi
 script:
   - cd tests
   - ./get_my_region_test.sh
