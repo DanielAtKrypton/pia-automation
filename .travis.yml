@@ -4,6 +4,12 @@ os:
   - osx
 addons:
   apt:
+    update: true
+    packages:
+      - openvpn
+      - jq
+  homebrew:
+    update: true
     packages:
       - openvpn
       - jq
