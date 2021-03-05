@@ -6,10 +6,10 @@ env:
 # - AUTOCONNECT=true DISABLE_IPV6="no" PIA_DNS=false PIA_PF=true VPN_PROTOCOL=openvpn_tcp_strong
 jobs:
   include:
-    - os: linux
-      dist: bionic
+    # - os: linux
+    #   dist: bionic
     - os: osx
-      osx_image: xcode10.1
+      # osx_image: xcode10.1
 addons:
   apt:
     update: true
@@ -23,8 +23,8 @@ addons:
       - jq
 
 before_install:
-  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew install openvpn; fi
-  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get install openvpn; fi
+  # - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew install openvpn; fi
+  # - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get install openvpn; fi
 script:
   - cd tests
   - ./get_my_region_test.sh
